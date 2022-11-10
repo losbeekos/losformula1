@@ -1,0 +1,27 @@
+<div class="max-w-3xl mx-auto">
+  <app-standings-nav></app-standings-nav>
+  <app-table *ngIf="standing$ | async; let standing">
+    <caption appTableCaption>
+      Constructor standings
+      {{
+        standing.season
+      }}
+    </caption>
+    <thead appTableHead>
+      <th appTableTh [first]="true">#</th>
+      <th appTableTh>Constructor</th>
+      <th appTableTh>Points</th>
+      <th appTableTh [last]="true">Wins</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let constructor of standing.ConstructorStandings" appTableTr>
+        <td appTableTd>{{ constructor.position }}</td>
+        <td appTableTd>
+          {{ constructor.Constructor.name }}
+        </td>
+        <td appTableTd>{{ constructor.points }}</td>
+        <td appTableTd>{{ constructor.wins }}</td>
+      </tr>
+    </tbody>
+  </app-table>
+</div>

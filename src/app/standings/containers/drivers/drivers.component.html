@@ -1,0 +1,27 @@
+<div class="max-w-3xl mx-auto">
+  <app-standings-nav></app-standings-nav>
+  <app-table *ngIf="standing$ | async; let standing">
+    <caption appTableCaption>
+      Driver standings
+      {{
+        standing.season
+      }}
+    </caption>
+    <thead appTableHead>
+      <th appTableTh [first]="true">#</th>
+      <th appTableTh>Driver</th>
+      <th appTableTh>Points</th>
+      <th appTableTh [last]="true">Wins</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let driver of standing.DriverStandings" appTableTr>
+        <td appTableTd>{{ driver.position }}</td>
+        <td appTableTd>
+          {{ driver.Driver.givenName }} {{ driver.Driver.familyName }}
+        </td>
+        <td appTableTd>{{ driver.points }}</td>
+        <td appTableTd>{{ driver.wins }}</td>
+      </tr>
+    </tbody>
+  </app-table>
+</div>

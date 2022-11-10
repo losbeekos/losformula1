@@ -1,0 +1,35 @@
+<article
+  class="bg-white my-8 rounded-2xl dark:bg-slate-700 dark:text-slate-200"
+>
+  <div class="flex justify-between items-center p-6">
+    <div class="flex">
+      <app-country-emoji
+        [country]="race.Circuit.Location.country"
+      ></app-country-emoji>
+      <div class="ml-4">
+        <h2 class="font-bold">
+          <a [href]="race.url">
+            {{ race.raceName }}
+          </a>
+        </h2>
+        <a
+          class="text-sm text-slate-500 dark:text-slate-400"
+          [href]="race.Circuit.url"
+        >
+          {{ race.Circuit.circuitName }}
+        </a>
+      </div>
+    </div>
+    <div
+      class="w-10 h-10 flex justify-center items-center rounded-full font-bold bg-slate-100 shadow-inner dark:bg-slate-600"
+    >
+      {{ race.round }}
+    </div>
+  </div>
+  <div class="p-6 bg-slate-200 shadow-inner dark:bg-slate-800 rounded-b-2xl">
+    <app-calendar-race-sessions
+      *ngIf="true"
+      [race]="race"
+    ></app-calendar-race-sessions>
+  </div>
+</article>
