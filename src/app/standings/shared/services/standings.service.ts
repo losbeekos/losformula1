@@ -5,7 +5,7 @@ import { DriverStandings } from 'src/app/shared/models/driver.model';
 import { ConstructorStandings } from 'src/app/shared/models/constructor.model';
 
 @Injectable({
-  providedIn: 'any',
+  providedIn: 'root',
 })
 export class StandingsService {
   constructor(private http: HttpClient) {}
