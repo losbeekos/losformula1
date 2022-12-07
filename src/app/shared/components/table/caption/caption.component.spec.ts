@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableCaptionComponent } from './caption.component';
 
-describe('CaptionComponent', () => {
+describe('TableCaptionComponent', () => {
   let component: TableCaptionComponent;
   let fixture: ComponentFixture<TableCaptionComponent>;
 

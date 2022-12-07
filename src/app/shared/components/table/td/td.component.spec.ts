@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableTdComponent } from './td.component';
 
-describe('TdComponent', () => {
+describe('TableTdComponent', () => {
   let component: TableTdComponent;
   let fixture: ComponentFixture<TableTdComponent>;
 

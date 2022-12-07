@@ -1,5 +1,4 @@
-import { Time } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Race } from '@shared/models/race.model';
 
 @Component({
@@ -7,12 +6,8 @@ import { Race } from '@shared/models/race.model';
   templateUrl: './race-sessions.component.html',
   styleUrls: ['./race-sessions.component.css'],
 })
-export class CalendarRaceSessionsComponent implements OnInit {
+export class CalendarRaceSessionsComponent {
   @Input() race!: Race;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   formatRaceTime(date: string, time: string) {
     return `${date}T${time}`;

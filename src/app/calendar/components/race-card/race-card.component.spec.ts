@@ -5,7 +5,7 @@ import { CalendarRaceSessionsComponent } from '@app/calendar/components/race-ses
 
 import { CalendarRaceCardComponent } from './race-card.component';
 
-fdescribe('CalendarRaceCardComponent', () => {
+describe('CalendarRaceCardComponent', () => {
   let component: CalendarRaceCardComponent;
   let fixture: ComponentFixture<CalendarRaceCardComponent>;
 
@@ -26,7 +26,6 @@ fdescribe('CalendarRaceCardComponent', () => {
   });
 
   it('should create', () => {
-    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });

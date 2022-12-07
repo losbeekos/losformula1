@@ -8,9 +8,8 @@ describe('CountryEmojiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CountryEmojiComponent ]
-    })
-    .compileComponents();
+      declarations: [CountryEmojiComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CountryEmojiComponent);
     component = fixture.componentInstance;
