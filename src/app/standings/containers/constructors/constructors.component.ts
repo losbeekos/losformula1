@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { ConstructorStandingsList } from 'src/app/shared/models/constructor.model';
-import { StandingsService } from '../../shared/services/standings.service';
+import { ConstructorStandingsList } from '@shared/models/constructor.model';
+import { StandingsService } from '@app/standings/shared/services/standings.service';
 
 @Component({
   selector: 'app-standings-constructors',

@@ -11,7 +11,7 @@ export interface Race {
   url: string;
   raceName: string;
   Circuit: Circuit;
-  date: Date;
+  date: string;
   time: string;
   FirstPractice: RaceTime;
   SecondPractice: RaceTime;
@@ -21,6 +21,6 @@ export interface Race {
 }
 
 export interface RaceTime {
-  date: Date;
+  date: string;
   time: string;
 }

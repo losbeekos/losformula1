@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrComponent } from './tr.component';
+import { TableTrComponent } from './tr.component';
 
-describe('TrComponent', () => {
-  let component: TrComponent;
-  let fixture: ComponentFixture<TrComponent>;
+describe('TableTrComponent', () => {
+  let component: TableTrComponent;
+  let fixture: ComponentFixture<TableTrComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrComponent ]
-    })
-    .compileComponents();
+      declarations: [TableTrComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(TrComponent);
+    fixture = TestBed.createComponent(TableTrComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

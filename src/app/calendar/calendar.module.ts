@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { CalendarRoutingModule } from './calendar-routing.module';
 import { CalendarComponent } from './containers/calendar/calendar.component';
 import { CalendarRaceCardComponent } from './components/race-card/race-card.component';

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Subscription } from 'rxjs';
-import { Race, RaceTable } from 'src/app/shared/models/race.model';
-import { Schedule } from 'src/app/shared/models/schedule.model';
-import { ScheduleService } from '../../shared/services/schedule.service';
-import { DatesService } from '../../../shared/services/dates/dates.service';
+import { Race, RaceTable } from '@shared/models/race.model';
+import { Schedule } from '@shared/models/schedule.model';
+import { DatesService } from '@shared/services/dates/dates.service';
+import { ScheduleService } from '@app/calendar/shared/services/schedule.service';
 
 @Component({
   selector: 'app-calendar',

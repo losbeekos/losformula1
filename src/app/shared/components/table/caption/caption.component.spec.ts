@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CaptionComponent } from './caption.component';
+import { TableCaptionComponent } from './caption.component';
 
 describe('CaptionComponent', () => {
-  let component: CaptionComponent;
-  let fixture: ComponentFixture<CaptionComponent>;
+  let component: TableCaptionComponent;
+  let fixture: ComponentFixture<TableCaptionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CaptionComponent ]
-    })
-    .compileComponents();
+      declarations: [TableCaptionComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(CaptionComponent);
+    fixture = TestBed.createComponent(TableCaptionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

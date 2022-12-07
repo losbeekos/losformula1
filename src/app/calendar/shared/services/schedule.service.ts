@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Schedule } from 'src/app/shared/models/schedule.model';
-import { environment } from 'src/environments/environment';
+import { Schedule } from '@shared/models/schedule.model';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root',

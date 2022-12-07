@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Location } from '../../models/location.model';
+import { Location } from '@shared/models/location.model';
 
 @Component({
   selector: 'app-country-emoji',

@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TdComponent } from './td.component';
+import { TableTdComponent } from './td.component';
 
 describe('TdComponent', () => {
-  let component: TdComponent;
-  let fixture: ComponentFixture<TdComponent>;
+  let component: TableTdComponent;
+  let fixture: ComponentFixture<TableTdComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TdComponent ]
-    })
-    .compileComponents();
+      declarations: [TableTdComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(TdComponent);
+    fixture = TestBed.createComponent(TableTdComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

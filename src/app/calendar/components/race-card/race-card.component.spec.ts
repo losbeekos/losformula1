@@ -1,23 +1,32 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CountryEmojiComponent } from '@shared/components/country-emoji/country-emoji.component';
+import { raceDummy } from '@src/app/shared/dummies/race.dummy';
+import { CalendarRaceSessionsComponent } from '@app/calendar/components/race-sessions/race-sessions.component';
 
-import { RaceCardComponent } from './race-card.component';
+import { CalendarRaceCardComponent } from './race-card.component';
 
-describe('RaceCardComponent', () => {
-  let component: RaceCardComponent;
-  let fixture: ComponentFixture<RaceCardComponent>;
+fdescribe('CalendarRaceCardComponent', () => {
+  let component: CalendarRaceCardComponent;
+  let fixture: ComponentFixture<CalendarRaceCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RaceCardComponent ]
-    })
-    .compileComponents();
+      declarations: [
+        CalendarRaceCardComponent,
+        CalendarRaceSessionsComponent,
+        CountryEmojiComponent,
+      ],
+      imports: [],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(RaceCardComponent);
+    fixture = TestBed.createComponent(CalendarRaceCardComponent);
     component = fixture.componentInstance;
+    component.race = raceDummy;
     fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });
