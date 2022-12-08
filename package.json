@@ -1,14 +1,16 @@
 {
   "name": "losformula",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --max-workers=50%",
+    "test:watch": "ng test --watch --max-workers=25%",
+    "test:ci": "ng test --run-in-band"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^15.0.1",
     "@angular/common": "^15.0.1",
