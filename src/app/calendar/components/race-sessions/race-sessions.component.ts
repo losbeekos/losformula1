@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Race } from '@shared/models/race.model';
+import { TimesService } from '@shared/services/times/times.service';
 
 @Component({
   selector: 'app-calendar-race-sessions',
@@ -7,9 +8,7 @@ import { Race } from '@shared/models/race.model';
   styleUrls: ['./race-sessions.component.css'],
 })
 export class CalendarRaceSessionsComponent {
-  @Input() race!: Race;
+  readonly timesService = inject(TimesService);
 
-  formatRaceTime(date: string, time: string) {
-    return `${date}T${time}`;
-  }
+  @Input() race!: Race;
 }

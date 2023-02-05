@@ -8,8 +8,4 @@ import { Race } from '@shared/models/race.model';
 })
 export class CalendarRaceCardComponent {
   @Input() race!: Race;
-
-  get raceTime() {
-    return `${this.race.date}T${this.race.time}`;
-  }
 }

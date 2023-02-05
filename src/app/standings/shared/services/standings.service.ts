@@ -1,25 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, shareReplay } from 'rxjs';
 import { DriverStandings } from '@shared/models/driver.model';
 import { ConstructorStandings } from '@shared/models/constructor.model';
-import { environment } from '@env/environment';
+import { BaseHttpService } from '@shared/services/base-http/base-http.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class StandingsService {
-  constructor(private http: HttpClient) {}
+export class StandingsService extends BaseHttpService {
+  private drivers$!: Observable<DriverStandings>;
+  private constructors$!: Observable<ConstructorStandings>;
 
-  drivers(): Observable<DriverStandings> {
-    return this.http.get<DriverStandings>(
-      `${environment.API_URL}/current/driverstandings.json`
-    );
+  drivers(season: string = 'current'): Observable<DriverStandings> {
+    if (!this.drivers$) {
+      this.drivers$ = this.get<DriverStandings>(
+        `${season}/driverstandings`
+      ).pipe(shareReplay(1));
+    }
+    return this.drivers$;
   }
 
-  constructors(): Observable<ConstructorStandings> {
-    return this.http.get<ConstructorStandings>(
-      `${environment.API_URL}/current/constructorstandings.json`
-    );
+  constructors(season: string = 'current'): Observable<ConstructorStandings> {
+    if (!this.constructors$) {
+      this.constructors$ = this.get<ConstructorStandings>(
+        `${season}/constructorstandings`
+      ).pipe(shareReplay(1));
+    }
+    return this.constructors$;
   }
 }

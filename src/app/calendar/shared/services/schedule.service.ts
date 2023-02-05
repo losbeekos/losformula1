@@ -1,16 +1,18 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, shareReplay } from 'rxjs';
 import { Schedule } from '@shared/models/schedule.model';
-import { environment } from '@env/environment';
+import { BaseHttpService } from '@src/app/shared/services/base-http/base-http.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ScheduleService {
-  constructor(private http: HttpClient) {}
+export class ScheduleService extends BaseHttpService {
+  private schedule$!: Observable<Schedule>;
 
   current(): Observable<Schedule> {
-    return this.http.get<Schedule>(`${environment.API_URL}/current.json`);
+    if (!this.schedule$) {
+      this.schedule$ = this.get<Schedule>('current').pipe(shareReplay(1));
+    }
+    return this.schedule$;
   }
 }

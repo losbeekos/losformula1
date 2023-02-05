@@ -3,8 +3,8 @@
     <div>1st practice</div>
     <div class="text-slate-500 dark:text-gray-400">
       {{
-        formatRaceTime(race.FirstPractice.date, race.FirstPractice.time)
-          | date: "E dd LLL HH:mm zzzz"
+        timesService.raceTime(race.FirstPractice.date, race.FirstPractice.time)
+          | date : "E dd LLL HH:mm zzzz"
       }}
     </div>
   </li>
@@ -12,8 +12,8 @@
     <div>Qualifying</div>
     <div class="text-slate-500 dark:text-gray-400">
       {{
-        formatRaceTime(race.Qualifying.date, race.Qualifying.time)
-          | date: "E dd LLL HH:mm zzzz"
+        timesService.raceTime(race.Qualifying.date, race.Qualifying.time)
+          | date : "E dd LLL HH:mm zzzz"
       }}
     </div>
   </li>
@@ -21,8 +21,10 @@
     <div>2nd practice</div>
     <div class="text-slate-500 dark:text-gray-400">
       {{
-        formatRaceTime(race.SecondPractice.date, race.SecondPractice.time)
-          | date: "E dd LLL HH:mm zzzz"
+        timesService.raceTime(
+          race.SecondPractice.date,
+          race.SecondPractice.time
+        ) | date : "E dd LLL HH:mm zzzz"
       }}
     </div>
   </li>
@@ -30,8 +32,8 @@
     <div>3rd practice</div>
     <div class="text-slate-500 dark:text-gray-400">
       {{
-        formatRaceTime(race.ThirdPractice.date, race.ThirdPractice.time)
-          | date: "E dd LLL HH:mm zzzz"
+        timesService.raceTime(race.ThirdPractice.date, race.ThirdPractice.time)
+          | date : "E dd LLL HH:mm zzzz"
       }}
     </div>
   </li>
@@ -39,8 +41,8 @@
     <div>Qualifying</div>
     <div class="text-slate-500 dark:text-gray-400">
       {{
-        formatRaceTime(race.Qualifying.date, race.Qualifying.time)
-          | date: "E dd LLL HH:mm zzzz"
+        timesService.raceTime(race.Qualifying.date, race.Qualifying.time)
+          | date : "E dd LLL HH:mm zzzz"
       }}
     </div>
   </li>
@@ -48,15 +50,18 @@
     <div>Sprint</div>
     <div class="text-slate-500 dark:text-gray-400">
       {{
-        formatRaceTime(race.Sprint.date, race.Sprint.time)
-          | date: "E dd LLL HH:mm zzzz"
+        timesService.raceTime(race.Sprint.date, race.Sprint.time)
+          | date : "E dd LLL HH:mm zzzz"
       }}
     </div>
   </li>
   <li class="flex justify-between">
     <div>Race</div>
     <div class="text-slate-500 dark:text-gray-400">
-      {{ formatRaceTime(race.date, race.time) | date: "E dd LLL HH:mm zzzz" }}
+      {{
+        timesService.raceTime(race.date, race.time)
+          | date : "E dd LLL HH:mm zzzz"
+      }}
     </div>
   </li>
 </ul>

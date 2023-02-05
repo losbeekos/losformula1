@@ -1,31 +1,29 @@
-<div *ngIf="error; else calendar">
-  {{ error }}
+<div
+  *ngIf="schedule$ | async as schedule; else loading"
+  class="max-w-lg mx-auto"
+>
+  <h1 class="text-3xl font-bold">{{ schedule.season }} Calendar</h1>
+  <ng-container *ngIf="schedule.comingRaces.length > 0">
+    <h2
+      class="bg-slate-100 dark:bg-slate-900 text-2xl font-bold text-left sticky top-0 py-8"
+    >
+      Coming races
+    </h2>
+    <app-calendar-race-card
+      *ngFor="let race of schedule.comingRaces"
+      [race]="race"
+    ></app-calendar-race-card>
+  </ng-container>
+  <ng-container *ngIf="schedule.pastRaces.length > 0">
+    <h2
+      class="bg-slate-100 dark:bg-slate-900 text-2xl font-bold text-left sticky top-0 py-8"
+    >
+      Past races
+    </h2>
+    <app-calendar-race-card
+      *ngFor="let race of schedule.pastRaces"
+      [race]="race"
+    ></app-calendar-race-card>
+  </ng-container>
 </div>
-<ng-template #calendar>
-  <div *ngIf="schedule; else loading" class="max-w-lg mx-auto">
-    <h1 class="text-3xl font-bold">{{ schedule.season }} Calendar</h1>
-    <ng-container *ngIf="comingRaces.length > 0">
-      <h2
-        class="bg-slate-100 dark:bg-slate-900 text-2xl font-bold text-left sticky top-0 py-8"
-      >
-        Coming races
-      </h2>
-      <app-calendar-race-card
-        *ngFor="let race of comingRaces"
-        [race]="race"
-      ></app-calendar-race-card>
-    </ng-container>
-    <ng-container *ngIf="pastRaces.length > 0">
-      <h2
-        class="bg-slate-100 dark:bg-slate-900 text-2xl font-bold text-left sticky top-0 py-8"
-      >
-        Past races
-      </h2>
-      <app-calendar-race-card
-        *ngFor="let race of pastRaces"
-        [race]="race"
-      ></app-calendar-race-card>
-    </ng-container>
-  </div>
-  <ng-template #loading>loading...</ng-template>
-</ng-template>
+<ng-template #loading>loading...</ng-template>

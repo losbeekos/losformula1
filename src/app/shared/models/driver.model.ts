@@ -2,13 +2,10 @@ import { MRData } from './api.model';
 import { Constructor } from './constructor.model';
 
 export interface Driver {
-  driverId: string;
   permanentNumber: string;
-  code: string;
-  url: string;
   givenName: string;
   familyName: string;
-  dateOfBirth: Date;
+  dateOfBirth: string;
   nationality: string;
 }
 

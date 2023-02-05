@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'caption[appTableCaption]',
@@ -9,8 +9,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './caption.component.html',
   styleUrls: ['./caption.component.css'],
 })
-export class TableCaptionComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class TableCaptionComponent {}

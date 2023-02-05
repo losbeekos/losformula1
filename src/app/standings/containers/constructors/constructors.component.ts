@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { ConstructorStandingsList } from '@shared/models/constructor.model';
 import { StandingsService } from '@app/standings/shared/services/standings.service';
@@ -9,9 +9,9 @@ import { StandingsService } from '@app/standings/shared/services/standings.servi
   styleUrls: ['./constructors.component.css'],
 })
 export class ConstructorsComponent implements OnInit {
-  standing$!: Observable<ConstructorStandingsList>;
+  readonly standingService = inject(StandingsService);
 
-  constructor(private standingService: StandingsService) {}
+  standing$!: Observable<ConstructorStandingsList>;
 
   ngOnInit(): void {
     this.standing$ = this.standingService
