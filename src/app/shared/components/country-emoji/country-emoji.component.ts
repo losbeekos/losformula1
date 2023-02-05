@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Location } from '@shared/models/location.model';
 
 @Component({
+  standalone: true,
   selector: 'app-country-emoji',
   templateUrl: './country-emoji.component.html',
   styleUrls: ['./country-emoji.component.css'],

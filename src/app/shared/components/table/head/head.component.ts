@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'thead[appTableHead]',
   host: { class: 'sticky top-24 bg-slate-200 dark:bg-slate-800 text-left' },
   templateUrl: './head.component.html',

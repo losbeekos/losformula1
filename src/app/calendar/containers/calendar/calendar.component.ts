@@ -1,10 +1,12 @@
+import { map, Observable } from 'rxjs';
 import { Component, inject, OnInit } from '@angular/core';
-import { map, Observable, shareReplay } from 'rxjs';
+import { CommonModule } from '@angular/common';
 import { Race, RaceTable } from '@shared/models/race.model';
 import { Schedule } from '@shared/models/schedule.model';
 import { DatesService } from '@shared/services/dates/dates.service';
 import { TimesService } from '@shared/services/times/times.service';
 import { ScheduleService } from '@app/calendar/shared/services/schedule.service';
+import { CalendarRaceCardComponent } from '@app/calendar/components/race-card/race-card.component';
 
 interface CustomSchedule {
   season: RaceTable['season'];
@@ -13,12 +15,14 @@ interface CustomSchedule {
 }
 
 @Component({
+  standalone: true,
   selector: 'app-calendar',
+  imports: [CommonModule, CalendarRaceCardComponent],
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
 })
 export class CalendarComponent implements OnInit {
-  private timesService = inject(TimesService);
+  readonly timesService = inject(TimesService);
   readonly scheduleService = inject(ScheduleService);
   readonly datesService = inject(DatesService);
 
