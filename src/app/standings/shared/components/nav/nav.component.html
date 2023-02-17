@@ -1,17 +1,19 @@
 <nav class="flex items-center gap-3">
   <a
-    class="px-4 py-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-medium"
+    class="px-4 py-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-medium flex items-center gap-3"
     [routerLink]="['/standings']"
     routerLinkActive="bg-slate-300 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-700"
     [routerLinkActiveOptions]="{ exact: true }"
   >
-    Drivers
+    <ng-icon name="heroUserSolid"></ng-icon>
+    <span class="hidden sm:inline">Drivers</span>
   </a>
   <a
-    class="px-4 py-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-medium"
+    class="px-4 py-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-medium flex items-center gap-3"
     [routerLink]="['/standings/constructors']"
     routerLinkActive="bg-slate-300 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-700"
   >
-    Constructors
+    <ng-icon name="heroUsersSolid"></ng-icon>
+    <span class="hidden sm:inline">Constructors</span>
   </a>
 </nav>

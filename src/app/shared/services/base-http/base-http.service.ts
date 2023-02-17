@@ -9,7 +9,8 @@ import { environment } from '@env/environment';
 export abstract class BaseHttpService {
   readonly http = inject(HttpClient);
 
-  protected get<T>(url: string): Observable<T> {
-    return this.http.get<T>(`${environment.API_URL}/${url}.json`);
+  protected get<T>(url: string, params?: object): Observable<T> {
+    const p = new URLSearchParams({ ...params });
+    return this.http.get<T>(`${environment.API_URL}/${url}.json?${p}`);
   }
 }

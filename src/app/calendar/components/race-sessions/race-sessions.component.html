@@ -1,67 +1,76 @@
-<ul class="text-sm font-mono">
-  <li *ngIf="race.FirstPractice" class="flex justify-between">
-    <div>1st practice</div>
-    <div class="text-slate-500 dark:text-gray-400">
-      {{
-        timesService.raceTime(race.FirstPractice.date, race.FirstPractice.time)
-          | date : "E dd LLL HH:mm zzzz"
-      }}
-    </div>
-  </li>
-  <li *ngIf="race.Sprint && race.Qualifying" class="flex justify-between">
-    <div>Qualifying</div>
-    <div class="text-slate-500 dark:text-gray-400">
-      {{
-        timesService.raceTime(race.Qualifying.date, race.Qualifying.time)
-          | date : "E dd LLL HH:mm zzzz"
-      }}
-    </div>
-  </li>
-  <li *ngIf="race.SecondPractice" class="flex justify-between">
-    <div>2nd practice</div>
-    <div class="text-slate-500 dark:text-gray-400">
-      {{
-        timesService.raceTime(
-          race.SecondPractice.date,
-          race.SecondPractice.time
-        ) | date : "E dd LLL HH:mm zzzz"
-      }}
-    </div>
-  </li>
-  <li *ngIf="race.ThirdPractice" class="flex justify-between">
-    <div>3rd practice</div>
-    <div class="text-slate-500 dark:text-gray-400">
-      {{
-        timesService.raceTime(race.ThirdPractice.date, race.ThirdPractice.time)
-          | date : "E dd LLL HH:mm zzzz"
-      }}
-    </div>
-  </li>
-  <li *ngIf="!race.Sprint && race.Qualifying" class="flex justify-between">
-    <div>Qualifying</div>
-    <div class="text-slate-500 dark:text-gray-400">
-      {{
-        timesService.raceTime(race.Qualifying.date, race.Qualifying.time)
-          | date : "E dd LLL HH:mm zzzz"
-      }}
-    </div>
-  </li>
-  <li *ngIf="race.Sprint" class="flex justify-between">
-    <div>Sprint</div>
-    <div class="text-slate-500 dark:text-gray-400">
-      {{
-        timesService.raceTime(race.Sprint.date, race.Sprint.time)
-          | date : "E dd LLL HH:mm zzzz"
-      }}
-    </div>
-  </li>
-  <li class="flex justify-between">
-    <div>Race</div>
-    <div class="text-slate-500 dark:text-gray-400">
-      {{
-        timesService.raceTime(race.date, race.time)
-          | date : "E dd LLL HH:mm zzzz"
-      }}
-    </div>
-  </li>
-</ul>
+<div class="text-sm font-mono">
+  <ul>
+    <li *ngIf="race.FirstPractice" class="flex justify-between">
+      <div>1st practice</div>
+      <div class="text-slate-500 dark:text-gray-400">
+        {{
+          timesService.raceTime(
+            race.FirstPractice.date,
+            race.FirstPractice.time
+          ) | date : "E dd LLL HH:mm"
+        }}
+      </div>
+    </li>
+    <li *ngIf="race.Sprint && race.Qualifying" class="flex justify-between">
+      <div>Qualifying</div>
+      <div class="text-slate-500 dark:text-gray-400">
+        {{
+          timesService.raceTime(race.Qualifying.date, race.Qualifying.time)
+            | date : "E dd LLL HH:mm"
+        }}
+      </div>
+    </li>
+    <li *ngIf="race.SecondPractice" class="flex justify-between">
+      <div>2nd practice</div>
+      <div class="text-slate-500 dark:text-gray-400">
+        {{
+          timesService.raceTime(
+            race.SecondPractice.date,
+            race.SecondPractice.time
+          ) | date : "E dd LLL HH:mm"
+        }}
+      </div>
+    </li>
+    <li *ngIf="race.ThirdPractice" class="flex justify-between">
+      <div>3rd practice</div>
+      <div class="text-slate-500 dark:text-gray-400">
+        {{
+          timesService.raceTime(
+            race.ThirdPractice.date,
+            race.ThirdPractice.time
+          ) | date : "E dd LLL HH:mm"
+        }}
+      </div>
+    </li>
+    <li *ngIf="!race.Sprint && race.Qualifying" class="flex justify-between">
+      <div>Qualifying</div>
+      <div class="text-slate-500 dark:text-gray-400">
+        {{
+          timesService.raceTime(race.Qualifying.date, race.Qualifying.time)
+            | date : "E dd LLL HH:mm"
+        }}
+      </div>
+    </li>
+    <li *ngIf="race.Sprint" class="flex justify-between">
+      <div>Sprint</div>
+      <div class="text-slate-500 dark:text-gray-400">
+        {{
+          timesService.raceTime(race.Sprint.date, race.Sprint.time)
+            | date : "E dd LLL HH:mm"
+        }}
+      </div>
+    </li>
+    <li class="flex justify-between">
+      <div>Race</div>
+      <div class="text-slate-500 dark:text-gray-400">
+        {{
+          timesService.raceTime(race.date, race.time) | date : "E dd LLL HH:mm"
+        }}
+      </div>
+    </li>
+  </ul>
+  <p class="mt-2 text-right text-xs text-slate-400 dark:text-gray-500">
+    timezone
+    {{ timesService.raceTime(race.date, race.time) | date : "zzzz" }}
+  </p>
+</div>

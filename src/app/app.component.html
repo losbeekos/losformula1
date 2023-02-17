@@ -1,26 +1,37 @@
 <header
-  class="bg-slate-100 dark:bg-slate-700/10 border-b border-slate-300 dark:border-slate-800 py-5 px-5 md:px-12"
+  class="fixed bottom-0 w-full flex justify-center z-10 drop-shadow-2xl bg-slate-100 dark:bg-slate-800 border-t border-white dark:border-slate-700 py-3 px-5 md:py-5 md:px-12"
 >
   <nav cdkMenuBar class="flex gap-3">
     <a
       cdkMenuItem
-      class="px-5 py-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-semibold dark:text-white"
+      class="px-5 py-4 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-semibold flex items-center gap-3 dark:text-white md:py-2"
       [routerLink]="['/']"
       [routerLinkActiveOptions]="{ exact: true }"
       routerLinkActive="bg-slate-300 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-700"
     >
-      Calendar
+      <ng-icon name="heroCalendarSolid"></ng-icon>
+      <span class="hidden sm:inline">Calendar</span>
     </a>
     <a
       cdkMenuItem
-      class="px-5 py-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-semibold dark:text-white"
+      class="px-5 py-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-semibold flex items-center gap-3 dark:text-white md:py-2"
       [routerLink]="['/standings']"
       routerLinkActive="bg-slate-300 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-700"
     >
-      Standings
+      <ng-icon name="heroChartBarSolid"></ng-icon>
+      <span class="hidden sm:inline">Standings</span>
     </a>
+    <!-- <a
+      cdkMenuItem
+      class="px-5 py-2 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors font-semibold dark:text-white flex items-center gap-3"
+      [routerLink]="['/results']"
+      routerLinkActive="bg-slate-300 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-700"
+    >
+      <ng-icon name="heroClockSolid"></ng-icon>
+      <span class="hidden sm:inline">Results</span>
+    </a> -->
   </nav>
 </header>
-<main class="p-5 md:p-12 text-black dark:text-white">
+<main class="p-5 pb-28 md:p-12 md:pb-28 text-black dark:text-white">
   <router-outlet></router-outlet>
 </main>
