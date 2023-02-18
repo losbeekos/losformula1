@@ -10,6 +10,7 @@ import { TableCaptionComponent } from '@shared/components/table/caption/caption.
 import { TableHeadComponent } from '@shared/components/table/head/head.component';
 import { TableTrComponent } from '@shared/components/table/tr/tr.component';
 import { TableTdComponent } from '@shared/components/table/td/td.component';
+import { LoaderComponent } from '@shared/components/loader/loader.component';
 
 @Component({
   standalone: true,
@@ -17,6 +18,7 @@ import { TableTdComponent } from '@shared/components/table/td/td.component';
   imports: [
     CommonModule,
     NavComponent,
+    LoaderComponent,
     TableComponent,
     TableCaptionComponent,
     TableHeadComponent,

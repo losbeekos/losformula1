@@ -1,6 +1,6 @@
 <div class="max-w-3xl mx-auto">
   <app-standings-nav></app-standings-nav>
-  <app-table *ngIf="standing$ | async; let standing">
+  <app-table *ngIf="standing$ | async as standing; else loading">
     <caption appTableCaption>
       Constructor standings
       {{
@@ -24,4 +24,7 @@
       </tr>
     </tbody>
   </app-table>
+  <ng-template #loading>
+    <app-loader></app-loader>
+  </ng-template>
 </div>

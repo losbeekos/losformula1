@@ -5,6 +5,7 @@ import { Race, RaceTable } from '@shared/models/race.model';
 import { Schedule } from '@shared/models/schedule.model';
 import { DatesService } from '@shared/services/dates/dates.service';
 import { TimesService } from '@shared/services/times/times.service';
+import { LoaderComponent } from '@shared/components/loader/loader.component';
 import { ScheduleService } from '@app/calendar/shared/services/schedule.service';
 import { CalendarRaceCardComponent } from '@app/calendar/components/race-card/race-card.component';
 
@@ -17,7 +18,7 @@ interface CustomSchedule {
 @Component({
   standalone: true,
   selector: 'app-calendar',
-  imports: [CommonModule, CalendarRaceCardComponent],
+  imports: [CommonModule, CalendarRaceCardComponent, LoaderComponent],
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
 })
