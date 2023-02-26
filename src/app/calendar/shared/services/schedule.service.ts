@@ -11,7 +11,7 @@ export class ScheduleService extends BaseHttpService {
 
   current(): Observable<Schedule> {
     if (!this.schedule$) {
-      this.schedule$ = this.get<Schedule>('current').pipe(shareReplay(1));
+      this.schedule$ = this.get<Schedule>('2023').pipe(shareReplay(1));
     }
     return this.schedule$;
   }

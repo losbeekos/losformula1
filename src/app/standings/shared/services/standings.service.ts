@@ -11,7 +11,7 @@ export class StandingsService extends BaseHttpService {
   private drivers$!: Observable<DriverStandings>;
   private constructors$!: Observable<ConstructorStandings>;
 
-  drivers(season: string = 'current'): Observable<DriverStandings> {
+  drivers(season: string = '2023'): Observable<DriverStandings> {
     if (!this.drivers$) {
       this.drivers$ = this.get<DriverStandings>(
         `${season}/driverstandings`
@@ -20,7 +20,7 @@ export class StandingsService extends BaseHttpService {
     return this.drivers$;
   }
 
-  constructors(season: string = 'current'): Observable<ConstructorStandings> {
+  constructors(season: string = '2023'): Observable<ConstructorStandings> {
     if (!this.constructors$) {
       this.constructors$ = this.get<ConstructorStandings>(
         `${season}/constructorstandings`
