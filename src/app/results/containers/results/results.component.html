@@ -1,0 +1,76 @@
+<button
+  class="fixed left-0 top-0 z-50 px-4 py-2 rounded-xl font-medium flex items-center gap-3 xl:hidden"
+  (click)="open = !open"
+>
+  <ng-icon
+    [name]="open ? 'heroChevronDoubleLeftSolid' : 'heroChevronDoubleRightSolid'"
+  ></ng-icon>
+</button>
+<div *ngIf="races$ | async as races; else loading" class="xl:flex xl:gap-12">
+  <nav
+    class="fixed transition-all z-50 p-4 top-10 left-0 rounded-2xl -translate-x-full bg-white w-11/12 max-w-md h-max max-h-80 overflow-auto dark:bg-slate-700 dark:text-slate-200 xl:sticky xl:w-1/3 xl:translate-x-0 xl:top-8 xl:mt-8"
+    [ngClass]="{
+      'translate-x-0 left-[4.1%]': open
+    }"
+    role="menu"
+  >
+    <h2 class="text-xl font-bold mt-4 mb-5 mx-4">Races</h2>
+    <a
+      *ngFor="let race of races; let index = index"
+      class="flex rounded-xl px-5 py-3 items-center transition-colors hover:bg-slate-200 dark:hover:bg-slate-600"
+      role="menuitem"
+      [href]="'/results#result-' + race.round"
+    >
+      <app-country-emoji
+        [country]="race.Circuit.Location.country"
+        class="mr-6"
+      ></app-country-emoji>
+      {{ race.raceName }}
+      <div
+        class="ml-auto bg-slate-200 rounded-full text-xs font-bold w-6 h-6 flex items-center justify-center dark:bg-slate-800"
+      >
+        {{ race.round }}
+      </div>
+    </a>
+  </nav>
+  <div>
+    <app-table
+      [id]="'result-' + race.round"
+      *ngFor="let race of races; let index = index"
+    >
+      <caption appTableCaption>
+        {{
+          race.round
+        }}
+        {{
+          race.raceName
+        }}
+      </caption>
+      <thead appTableHead>
+        <th appTableTh [first]="true">#</th>
+        <th appTableTh>Driver</th>
+        <th appTableTh>Constructor</th>
+        <th appTableTh>Laps</th>
+        <th appTableTh>Time</th>
+        <th appTableTh>Status</th>
+        <th appTableTh [last]="true">Points</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of race.Results" appTableTr>
+          <td appTableTd>{{ result.position }}</td>
+          <td appTableTd>
+            {{ result.Driver.givenName }} {{ result.Driver.familyName }}
+          </td>
+          <td appTableTd>{{ result.Constructor.name }}</td>
+          <td appTableTd>{{ result.laps }}</td>
+          <td appTableTd>{{ result.Time?.time }}</td>
+          <td appTableTd>{{ result.status }}</td>
+          <td appTableTd>{{ result.points }}</td>
+        </tr>
+      </tbody>
+    </app-table>
+  </div>
+</div>
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>
