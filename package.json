@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^16.0.4",
     "@angular/platform-browser-dynamic": "^16.0.4",
     "@angular/router": "^16.0.4",
+    "@angular/service-worker": "^16.0.4",
     "@ng-icons/core": "^25.1.0",
     "@ng-icons/heroicons": "^25.1.0",
     "@ng-icons/radix-icons": "^25.1.0",
